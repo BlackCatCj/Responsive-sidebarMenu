@@ -1,0 +1,148 @@
+/* ?引入字体 网址就是html中引入的link中的网址 */
+/* !必须引入这个，因为content:'\f00d'这种要用到这个字体，否则出现不了图标的 */
+@import url("https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background: #000000;
+    
+}
+.navigation{
+    /* 元素将相对于屏幕视口的位置来指定其位置。并且元素的位置在屏幕滚动时不会改变 */
+    position: fixed;
+    width: 60px;
+    height: 100%;
+    background: #3a3374;
+    overflow: hidden;
+    transition-timing-function: 0.5s;
+}
+.navigation:hover,
+.navigation.active{
+    width: 150px;
+    
+}
+
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* border: 1px solid red; */
+}
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 10px 0px;
+    /* list-style: none; */
+    /* border: 1px solid blue; */
+}
+
+.navigation ul li a:hover{
+    background: #6712c9;
+}
+
+.navigation ul li a{
+    /* border: 1px solid yellow; */
+
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    /* 图标最小宽度与收缩状态的边栏一样宽，刚好可以展示图标 */
+    min-width: 60px;
+    text-align: center;
+}
+.navigation ul li a .icon .fa{
+    font-size: 30px;
+}
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    text-align: start;
+    white-space: nowrap; 
+    line-height: 25px;
+
+}
+.toggle{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: #8e4eac;
+    cursor: pointer;
+    
+
+}
+.toggle.active2{
+    background: #6712c9;
+}
+.toggle:before{
+    content: '\f2ba';
+    font-family: fontAwesome;
+
+    width: 100%;
+    height: 100%;
+
+    /* !可以用这两行替换display: flex那三行，一样是上下左右居中 */
+    /* 但是要注意，line-height：60px是跟设置的高度一样的，否则会偏上或偏下，没有display灵活 */
+    /* line-height: 60px;
+    text-align: center; */
+
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    font-size: 24px;
+    color: #fff;
+}
+.toggle.active2:before{
+    content: '\f00d';
+}
+
+/* ?响应式操作 */
+/* 当低于这个宽度时，进行修改 */
+@media(max-width:767px){
+    .navigation{
+        left: -60px;
+    }
+    .navigation.active{
+        left:0px;
+        width: 100%;
+    }
+}
+.wrapper{
+    /* 通过position: absolute 方可使用  transform: translate(-50%,-50%) 来进行上下左右的居中*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 50px;
+    letter-spacing:40px;
+    /* !因为letter-spacing 字间距设置为40px，最右侧会有个40px的距离 */
+    /* !所以通过padding-left 将整体向有移动回去40px，这样就居中了 */
+    padding-left: 40px;
+    font-family: cursive;
+}

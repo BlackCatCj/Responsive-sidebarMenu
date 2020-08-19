@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>响应式侧边栏</title>
+  <!-- !网页title的小图标  sizes可不设置-->
+  <link rel="icon" href="./title.png" sizes="32x32">
+
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="navigation">
+    <ul>
+      <li>
+        <a href="#">
+          <span class="icon">
+            <i class="fa fa-bath" aria-hidden="true"></i>
+          </span>
+          <span class="title">test1</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="icon">
+            <i class="fa fa-podcast" aria-hidden="true"></i>
+          </span>
+          <span class="title">test2</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="icon">
+            <i class="fa fa-telegram" aria-hidden="true"></i>
+          </span>
+          <span class="title">test3</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="icon">
+            <i class="fa fa-id-card" aria-hidden="true"></i>
+          </span>
+          <span class="title">test4</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="wrapper">
+    <div class="center">
+      响应式侧边菜单栏
+    </div>
+  </div>
+
+
+
+  <div class="toggle" onclick="toggleMenu()"></div>
+
+  <script>
+
+    // 菜单事件
+    function toggleMenu() {
+      let navigation = document.querySelector(".navigation");
+      let toggle = document.querySelector(".toggle");
+
+      navigation.classList.toggle("active");
+      toggle.classList.toggle("active2");
+    }
+  </script>
+</body>
+
+</html>
