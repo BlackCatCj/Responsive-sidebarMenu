@@ -151,9 +151,12 @@ body{
     justify-content: center;
     color: white;
     font-size: 50px;
+
+    /* 字间距设置 */
     letter-spacing:40px;
     /* !因为letter-spacing 字间距设置为40px，最右侧会有个40px的距离 */
     /* !所以通过padding-left 将整体向有移动回去40px，这样就居中了 */
     padding-left: 40px;
+    /* 字体设置 */
     font-family: cursive;
 }
