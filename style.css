@@ -1,6 +1,7 @@
 /* ?引入字体 网址就是html中引入的link中的网址 */
 /* !必须引入这个，因为content:'\f00d'这种要用到这个字体，否则出现不了图标的 */
 @import url("https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
 *{
     margin: 0;
     padding: 0;
@@ -13,6 +14,7 @@ body{
 }
 .navigation{
     /* 元素将相对于屏幕视口的位置来指定其位置。并且元素的位置在屏幕滚动时不会改变 */
+    /* fixed默认位置是top:0 left:0  也可以自己进行设置*/
     position: fixed;
     width: 60px;
     height: 100%;
@@ -20,14 +22,17 @@ body{
     overflow: hidden;
     transition-timing-function: 0.5s;
 }
+
+/* 侧边菜单栏展开的宽度 */
 .navigation:hover,
 .navigation.active{
-    width: 150px;
-    
+    width: 150px;  
 }
 
+/* 设置navigation内部的ul的绝对定位 */
 .navigation ul{
     position: absolute;
+    /* 可以不写top:0 left:0，因为是默认的位置 */
     top: 0;
     left: 0;
     width: 100%;
@@ -38,7 +43,7 @@ body{
     width: 100%;
     height: 50px;
     margin: 10px 0px;
-    /* list-style: none; */
+    list-style: none;
     /* border: 1px solid blue; */
 }
 
