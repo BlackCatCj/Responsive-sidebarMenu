@@ -43,6 +43,7 @@ body{
     width: 100%;
     height: 50px;
     margin: 10px 0px;
+    /* 取消li的小圆点样式 */
     list-style: none;
     /* border: 1px solid blue; */
 }
@@ -52,16 +53,18 @@ body{
 }
 
 .navigation ul li a{
-    /* border: 1px solid yellow; */
-
     position: absolute;
-    display: block;
     width: 100%;
     height: 100%;
+    /* 居中a标签内的图标和文字 */
     display: flex;
     align-items: center;
-    text-decoration: none;
     color: #fff;
+
+    /* text-decoration: none 标准的文本 默认的  */
+    /*  text-decoration:blink 闪烁文本*/
+    /* !IE、Chrome 或 Safari 不支持 "blink" 属性值 */
+    text-decoration: none;
 }
 
 .navigation ul li a .icon{
@@ -69,6 +72,7 @@ body{
     display: block;
     /* 图标最小宽度与收缩状态的边栏一样宽，刚好可以展示图标 */
     min-width: 60px;
+    /* 居中图标 */
     text-align: center;
 }
 .navigation ul li a .icon .fa{
@@ -76,13 +80,15 @@ body{
 }
 .navigation ul li a .title{
     position: relative;
-    display: block;
     padding: 0 10px;
-    text-align: start;
+    text-align: center;
+    /* 文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止 */
+    /* 防止菜单标题过长因为宽度不够自动换行 */
     white-space: nowrap; 
     line-height: 25px;
 
 }
+/* 右侧的菜单图标点击按钮 */
 .toggle{
     position: absolute;
     top: 0;
@@ -91,8 +97,6 @@ body{
     height: 60px;
     background: #8e4eac;
     cursor: pointer;
-    
-
 }
 .toggle.active2{
     background: #6712c9;
