@@ -103,6 +103,7 @@ body{
 }
 .toggle:before{
     content: '\f2ba';
+    /* 必须引入fontAwesome 否则图标无法通过content: '\f2ba' 显现 */
     font-family: fontAwesome;
 
     width: 100%;
@@ -137,6 +138,7 @@ body{
     }
 }
 .wrapper{
+    /* 因为页面有些元素不是通过display:flex进行居中的,所以这里无法通过body进行上下左右居中,只好用绝对定位了 */
     /* 通过position: absolute 方可使用  transform: translate(-50%,-50%) 来进行上下左右的居中*/
     position: absolute;
     top: 50%;
